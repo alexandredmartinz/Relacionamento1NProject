@@ -23,15 +23,14 @@ def cadastrar_marca(request, template_name='marca/marca_form.html'):
     return render(request, template_name, {'form':form})
 
 
-def listar_marca(request, template_name='marca/marca_list.html'):
+def listar_marca(request, template_name="marca/marca_list.html"):
     query = request.GET.get("busca")
     if query:
-        marca = Marca.objects.filter(nome_iexact=query)
+        marca = Marca.objects.filter(nome__iexact=query)
     else:
         marca = Marca.objects.all()
-    marcas = {'lista':marca}
+    marcas = {'lista': marca}
     return render(request, template_name, marcas)
-
 
 def editar_marca(request, pk,  template_name='marca/marca_form.html'):
     marca = get_object_or_404(Marca, pk=pk)
