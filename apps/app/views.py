@@ -6,13 +6,17 @@ from django.forms import ModelForm
 class ProdutoForm(ModelForm):
     class Meta:
         model = Produto
-        fields = ["descricao", "preco", "marca"]
-
+        fields = ["descricao", "preco", "marca", "categoria"]
 
 class MarcaForm(ModelForm):
     class Meta:
         model = Marca
-        fields = ["nome", "categoria"]
+        fields = ["nome"]
+
+class CategoriaForm(ModelForm):
+    class Meta:
+        model = Categoria
+        fields = ['nome']
 
 
 def cadastrar_marca(request, template_name="marca/marca_form.html"):
