@@ -31,8 +31,11 @@ Lista de Produtos
             <tr>
                 <td>{{ produto.descricao }}</td>
                 <td>{{ produto.preco }}</td>
-                <td>{{ produto.marca }}</td>
+                
                 <td>
+                    <a href="{% url 'perfil_produto' pk=produto.pk %}">
+                        <span class="glyphicon glyphicon-search"></span>
+                    </a>
                     <a href="{% url 'editar_produto' pk=produto.pk %}">
                         <span class="glyphicon glyphicon-pencil"></span>
                     </a>
