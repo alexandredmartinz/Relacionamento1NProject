@@ -22,7 +22,7 @@ Lista de Marcas
     <thead>
       <tr>
         <th>Nome</th>
-        <th>Categoria</th>
+        
         <th>Produtos</th>
         <th>Ação</th>
       </tr>
@@ -31,9 +31,8 @@ Lista de Marcas
       {% for marca in lista %}
       <tr>
         <td>{{ marca.nome }}</td>
-        <td>{{ marca.categoria }}</td>
-        <td><a href="{% url 'marca_produto' pk=marca.pk %}">Ver produtos</a></td>
 
+        <td><a href="{% url 'marca_produto' pk=marca.pk %}">Ver produtos</a></td>
         <td>
           <a href="{% url 'editar_marca' pk=marca.pk %}">
             <span class="glyphicon glyphicon-pencil"></span>
